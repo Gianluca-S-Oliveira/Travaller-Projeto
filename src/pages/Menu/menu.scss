@@ -1,0 +1,138 @@
+@import url("https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300;400;700&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Titillium Web", sans-serif;
+}
+
+:root {
+  --mainColor: #295c58;
+  --mainColorLight: #5767aa;
+  --secondaryColor: #db2b39;
+  --textColor: #202020;
+}
+.logo {
+  animation: bounceInLeft;
+  animation-duration: 2s;
+}
+header {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  height: 80px;
+  width: 80%;
+
+  margin: auto;
+  padding: 0 2rem;
+  background: none;
+  color: var(--textColor);
+}
+nav {
+  // background-color: red;
+  right: 10%;
+  position: absolute;
+  animation: bounceInLeft;
+  animation-duration: 3s;
+}
+nav a {
+  margin: 0 2rem;
+  color: var(--textColor);
+  text-decoration: none;
+  font-weight: 600;
+  overflow: hidden;
+}
+/* 
+nav a:hover {
+  color: var(--secondaryColor);
+} */
+
+header .nav-btn {
+  padding: 5px;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: var(--textColor);
+  visibility: hidden;
+  opacity: 0;
+  font-size: 1.8rem;
+}
+.close {
+  color: white;
+}
+header div,
+nav {
+  display: flex;
+  align-items: center;
+}
+nav a {
+  position: relative;
+  z-index: 1;
+  padding: 2px 6px;
+}
+
+nav a:after {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  display: block;
+  background-color: var(--mainColor);
+  content: "";
+  transform: translate3d(-101%, 0, 0);
+  z-index: -1;
+  transition: transform 0.3s cubic-bezier(0.4, 0.7, 0, 1);
+}
+
+nav a:hover {
+  color: #fff;
+}
+
+nav a:hover:after {
+  transform: translate3d(0, 0, 0);
+}
+
+@media only screen and (max-width: 1024px) {
+  header .nav-btn {
+    visibility: visible;
+    opacity: 1;
+  }
+  header {
+    align-items: center;
+  }
+  header nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    background-color: var(--mainColor);
+    color: white;
+    transition: 1s;
+    transform: translateY(-100vh);
+  }
+
+  header .responsive_nav {
+    transform: none;
+  }
+
+  nav .nav-close-btn {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    color: white;
+  }
+
+  nav a {
+    font-size: 2rem;
+    color: white;
+  }
+}

@@ -1,0 +1,90 @@
+.banner {
+  position: relative;
+  width: 90%;
+  min-height: 100vh;
+  //   background: #111;
+  padding: 0 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: auto;
+}
+.banner:before {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 300px;
+  height: 100%;
+  transform-origin: top;
+  transform: skewX(-25deg);
+  z-index: 1;
+  background-color: rgb(0, 177, 201);
+}
+
+.banner .textbox {
+  position: relative;
+  max-width: 50%;
+  z-index: 2;
+  animation: bounceInLeft;
+  animation-duration: 2.4s;
+}
+.banner .textbox p {
+  color: #000000;
+  font-size: 1.6em;
+  margin: 5px 0 25px;
+}
+.banner .textbox h2 {
+  color: #000000;
+  font-size: 2.5em;
+}
+.banner .imgBox {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  justify-content: right;
+  align-items: right;
+
+  width: 50%;
+  z-index: 2;
+}
+.banner .imgBox img {
+  position: absolute;
+  height: 85%;
+  animation: bounceInRight;
+  animation-duration: 2s;
+  bottom: 0;
+}
+.banner .textbox a {
+  position: relative;
+  background-color: red;
+  display: inline-block;
+  padding: 20px 100px;
+  border-radius: 20px;
+  color: white;
+  background-color: rgb(69, 184, 69);
+  font-size: 1.1em;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 700;
+}
+
+@media (max-width: 991px) {
+  .banner {
+    padding: 150px 10px;
+    flex-direction: column;
+    overflow: hidden;
+    width: 100%;
+    justify-content: flex-start;
+    z-index: -1;
+  }
+  .banner:before {
+    width: 300px;
+    transform: skewX(-25deg) translateX(50%);
+    height: 138vh;
+  }
+  .banner .textbox {
+    max-width: 100%;
+  }
+}

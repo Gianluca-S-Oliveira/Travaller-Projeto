@@ -1,0 +1,28 @@
+.text {
+  width: 100%;
+  display: flex;
+  height: 40vh;
+  background-size: cover;
+
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+  overflow: hidden;
+
+  h2 {
+    color: #000000;
+    font-size: 2em;
+    position: absolute;
+    padding: 7%;
+    word-spacing: 6px;
+
+    margin: 5px 0 25px;
+    z-index: 10;
+    color: white;
+  }
+  .imgfundo {
+    position: relative;
+    filter: brightness(30%);
+    z-index: -10;
+  }
+}
